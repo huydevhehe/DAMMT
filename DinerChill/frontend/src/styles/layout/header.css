@@ -1,0 +1,1035 @@
+/* Kiểu dáng cho Header - Thanh điều hướng chính */
+.site-header {
+  background-color: #1e0f30; /* Màu tím đậm với tông bí ẩn */
+  background-image: linear-gradient(to right, #1e0f30, #2d1b45, #1e0f30);
+  color: #fff;
+  padding: 8px 0;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  width: 100%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Container chung - Giới hạn chiều rộng nội dung */
+.container {
+  padding-left: 4px;
+  padding-right: 4px;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Bố cục header mới */
+.header-layout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* Phần logo */
+.logo-section {
+  flex: 0 0 auto;
+  margin-right: 20px;
+}
+
+/* Liên kết logo */
+.logo-link {
+  text-decoration: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.logo-link:hover {
+  transform: scale(1.05);
+}
+
+/* Hiệu ứng chuyển động cho logo */
+@keyframes logoShine {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Kiểu chữ logo */
+.logo {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 1.6rem;
+  white-space: nowrap;
+  background: linear-gradient(to right, #fff, #b490ff, #fff);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+  letter-spacing: 0.5px;
+  position: relative;
+  padding: 0 2px;
+  animation: logoShine 4s linear infinite;
+}
+
+.logo-link:hover .logo {
+  background: linear-gradient(to right, #b490ff, #fff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-shadow: 0px 3px 5px rgba(0, 0, 0, 0.4);
+}
+
+/* Phần điều hướng chính - căn giữa */
+.main-nav {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  justify-content: center;
+}
+
+/* Danh sách điều hướng */
+.main-nav ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  flex-wrap: nowrap;
+  gap: 10px;
+}
+
+/* Mục điều hướng */
+.nav-item {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+/* Liên kết trong điều hướng */
+.nav-item a,
+.nav-link,
+.location-btn,
+.account-btn {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 12px;
+  text-decoration: none;
+  color: white;
+  font-size: 0.9rem;
+  transition: color 0.3s;
+  white-space: nowrap;
+}
+
+.nav-item a:hover,
+.nav-link:hover,
+.location-btn:hover,
+.account-btn:hover {
+  color: #b490ff;
+  text-shadow: 0 0 5px rgba(180, 144, 255, 0.5);
+}
+
+/* Phần xác thực */
+.auth-nav {
+  flex: 0 0 auto;
+  margin-left: 20px;
+}
+
+/* Menu người dùng */
+.user-menu {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+/* Nút tài khoản */
+.account-btn {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  cursor: pointer;
+  margin-left: 0;
+  color: white;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+/* Menu thả xuống */
+.dropdown-menu {
+  top: 40px;
+  position: absolute;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  min-width: 200px;
+  z-index: 1000;
+}
+
+/* Truy vấn phương tiện cho header đáp ứng */
+@media (max-width: 1400px) {
+  .nav-item a,
+  .nav-item-dropdown {
+    padding: 8px 6px;
+    font-size: 0.85rem;
+  }
+
+  .nav-icon {
+    margin-right: 5px;
+    font-size: 1.0rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .container {
+    padding: 0 10px;
+  }
+
+  .logo {
+    font-size: 1.4rem;
+  }
+  
+  .logo-icon {
+    font-size: 1.1rem;
+  }
+
+  .nav-item a,
+  .nav-item-dropdown {
+    padding: 8px 5px;
+    font-size: 0.8rem;
+  }
+
+  .nav-icon {
+    margin-right: 2px;
+  }
+
+  .main-nav ul {
+    gap: 5px;
+  }
+}
+
+/* Thiết lập đáp ứng cho thiết bị trung bình */
+@media (max-width: 992px) {
+  .header-layout {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .logo-section {
+    margin-right: 0;
+  }
+
+  .main-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    order: 3;
+    background-color: #1e0f30;
+    background-image: linear-gradient(to right, #1e0f30, #2d1b45, #1e0f30);
+    z-index: 100;
+    display: none;
+  }
+
+  .main-nav.mobile-active {
+    display: block;
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .auth-nav {
+    margin-left: auto;
+    order: 2;
+  }
+
+  .hamburger-menu {
+    display: block;
+  }
+}
+
+/* Thiết lập đáp ứng cho thiết bị di động */
+@media (max-width: 768px) {
+  .logo {
+    font-size: 1.3rem;
+  }
+  
+  .logo-icon {
+    font-size: 1rem;
+    margin-right: 4px;
+  }
+  
+  .logo-section {
+    width: auto;
+    flex-wrap: nowrap;
+  }
+
+  .main-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    display: none;
+    background-color: #1e0f30;
+    background-image: linear-gradient(to right, #1e0f30, #2d1b45, #1e0f30);
+  }
+  
+  .main-nav.mobile-active {
+    display: flex;
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    width: 100%;
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+
+  .nav-item {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .auth-nav {
+    margin-right: 15px;
+  }
+  
+  .hamburger-menu {
+    display: block;
+    margin-left: 15px;
+  }
+}
+
+/* Menu hamburger cho thiết bị di động */
+.hamburger-menu {
+  display: none;
+  cursor: pointer;
+  width: 30px;
+  height: 25px;
+  position: relative;
+  margin-left: 15px;
+}
+
+/* Biểu tượng menu hamburger */
+.hamburger-icon {
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.hamburger-icon:before,
+.hamburger-icon:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  left: 0;
+}
+
+.hamburger-icon:before {
+  top: -8px;
+}
+
+.hamburger-icon:after {
+  bottom: -8px;
+}
+
+/* Đảm bảo menu di động hoạt động */
+.mobile-active {
+  display: block !important;
+}
+
+/* Kiểu xác thực header */
+.auth-nav {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin-left: 15px;
+}
+
+.auth-buttons {
+  display: none;
+}
+
+/* Điều chỉnh user menu */
+.user-menu {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+/* Giữ dropdown menu ở vị trí chính xác và thêm khoảng trống bên trên */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  padding: 8px 0;
+  z-index: 100;
+  min-width: 200px;
+  margin-top: 0; /* Giảm khoảng cách */
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Tạo vùng đệm vô hình bên trên dropdown menu để giữ kết nối hover */
+.dropdown-menu::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  background-color: transparent;
+}
+
+/* Hiển thị dropdown khi hover vào user menu - removed for user menu */
+.user-menu:hover .dropdown-menu,
+.dropdown-menu:hover {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Style cho account button */
+.account-btn {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 4px;
+  cursor: pointer;
+  margin-left: 0;
+  color: white;
+  font-size: 0.75rem;
+  white-space: nowrap;
+}
+
+/* Style cho dropdown menu items */
+.dropdown-menu a,
+.dropdown-menu button {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  color: #333;
+  text-decoration: none;
+  padding: 8px 16px;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.dropdown-menu a:hover,
+.dropdown-menu button:hover {
+  background-color: #f8f8f8;
+  color: #ff6b6b;
+}
+
+/* Hiệu ứng xuất hiện cho dropdown */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Styles cho Menu thả xuống Món ăn */
+.food-menu-container {
+  position: relative;
+}
+
+.nav-link {
+  cursor: pointer;
+  color: #333;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+
+.nav-link:hover {
+  color: #ff6b6b;
+}
+
+/* Menu thả xuống cho phần món ăn */
+.food-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  padding: 15px;
+  z-index: 100;
+  min-width: 600px;
+  margin-top: -1px;
+}
+
+/* Lưới hiển thị danh mục món ăn */
+.food-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.food-grid a {
+  color: #333;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+  display: block;
+  text-align: left;
+}
+
+.food-grid a:hover {
+  background-color: #f8f8f8;
+  color: #ff6b6b;
+}
+
+/* Điều chỉnh menu thả xuống trên thiết bị di động */
+@media (max-width: 768px) {
+  .food-dropdown-menu {
+    min-width: 300px;
+    left: -100px;
+  }
+
+  .food-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Style cho mũi tên thả xuống */
+.dropdown-arrow {
+  display: inline-block;
+  margin-left: 5px;
+  font-style: normal;
+  font-size: 0.8em;
+  transition: transform 0.3s ease;
+}
+
+.dropdown-arrow.open {
+  transform: rotate(180deg);
+}
+
+/* Style cho liên kết logo */
+.logo-link {
+  text-decoration: none;
+}
+
+/* Style riêng cho menu thả xuống blog */
+.blog-dropdown-menu {
+  min-width: 700px; /* Rộng hơn menu thả xuống món ăn */
+}
+
+.blog-grid {
+  grid-template-columns: repeat(3, 1fr); /* 3 cột thay vì 4 */
+  gap: 12px; /* Khoảng cách lớn hơn */
+}
+
+.blog-grid a {
+  white-space: nowrap; /* Ngăn văn bản ngắt dòng */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 10px 15px; /* Padding lớn hơn */
+}
+
+/* Điều chỉnh đáp ứng cho blog */
+@media (max-width: 768px) {
+  .blog-dropdown-menu {
+    min-width: 300px;
+    left: -100px;
+  }
+
+  .blog-grid {
+    grid-template-columns: repeat(1, 1fr); /* Một cột trên mobile */
+  }
+}
+
+/* Style cho nút vị trí */
+.location-btn {
+  display: inline-flex;
+  align-items: center;
+  color: #333;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.location-btn:hover {
+  color: #ff6b6b;
+  background-color: transparent;
+}
+
+.location-icon {
+  margin-right: 2px;
+  font-style: normal;
+  font-size: 1em;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Thêm hiệu ứng pulse cho icon vị trí */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.location-btn:hover .location-icon {
+  animation: pulse 1s infinite;
+}
+
+/* Style cho tất cả các nav item có icon */
+.nav-item {
+  display: inline-flex;
+  align-items: center;
+  color: #333;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.nav-item:hover {
+  color: #ff6b6b;
+}
+
+.nav-icon {
+  margin-right: 5px;
+  font-size: 1.0rem;
+  color: white;
+}
+
+/* Thêm hiệu ứng pulse cho tất cả các icon */
+.nav-item:hover .nav-icon,
+.nav-link:hover .nav-icon {
+  animation: pulse 1s infinite;
+}
+
+/* Điều chỉnh cho nav-link để hiển thị icon */
+.nav-link {
+  cursor: pointer;
+  color: #333;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Đảm bảo dropdown arrow đặt đúng vị trí */
+.dropdown-arrow {
+  display: inline-block;
+  font-size: 0.8rem;
+  margin-left: 4px;
+  transition: transform 0.2s;
+  color: white;
+}
+
+.dropdown-arrow.open {
+  transform: rotate(180deg);
+}
+
+/* Styling cho biểu tượng tài khoản */
+.account-btn {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  color: #333;
+  font-weight: 500;
+  padding: 0 4px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  font-size: 0.75rem;
+  margin-left: 15px;
+}
+
+.account-btn:hover {
+  color: #ff6b6b;
+}
+
+.account-icon {
+  margin-right: 6px;
+  font-style: normal;
+  font-size: 1.1em;
+}
+
+.account-btn:hover .account-icon {
+  animation: pulse 1s infinite;
+}
+
+/* Styling cho dropdown menu */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  padding: 8px 0;
+  z-index: 100;
+  min-width: 200px;
+  margin-top: -12px;
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Style cho các mục trong menu thả xuống */
+.dropdown-menu a,
+.dropdown-menu button {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  color: #333;
+  text-decoration: none;
+  padding: 8px 16px;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.dropdown-menu a:hover,
+.dropdown-menu button:hover {
+  background-color: #f8f8f8;
+  color: #ff6b6b;
+}
+
+.menu-icon {
+  margin-right: 8px;
+  font-style: normal;
+}
+
+/* Thêm style cho nav-icon */
+.nav-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 14px;
+  height: 14px;
+  margin-right: 2px;
+  font-style: normal;
+}
+
+/* Điều chỉnh khoảng cách cho các nav-item */
+.nav-item {
+  margin: 0;
+  position: relative;
+}
+
+.nav-item a {
+  display: flex;
+  align-items: center;
+  color: #333;
+  text-decoration: none;
+  padding: 0 4px;
+  font-weight: 500;
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+
+.nav-item a:hover {
+  color: #ff6b6b;
+}
+
+/* Style cho dropdown-toggle */
+.dropdown-toggle {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.dropdown-icon {
+  font-size: 0.7rem;
+  margin-left: 4px;
+}
+
+/* Điều chỉnh đáp ứng */
+@media (max-width: 992px) {
+  .nav-list {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .nav-item {
+    margin: 5px 0;
+  }
+}
+
+/* Điều chỉnh header để các phần tử thẳng hàng */
+.header {
+  background-color: #d81f26;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  justify-content: space-between;
+}
+
+/* Điều chỉnh nav list */
+.main-nav {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  flex-wrap: nowrap;
+}
+
+/* Đảm bảo tất cả nav-item có cùng chiều cao và căn giữa */
+.nav-item {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+.nav-item a,
+.nav-link,
+.location-btn,
+.account-btn {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 4px;
+  text-decoration: none;
+  color: white;
+  font-size: 0.75rem;
+  transition: color 0.3s;
+  white-space: nowrap;
+}
+
+.nav-item a:hover,
+.nav-link:hover,
+.location-btn:hover,
+.account-btn:hover {
+  color: #ffe4e4;
+}
+
+/* Đảm bảo tất cả các icon có kích thước giống nhau */
+.nav-icon,
+.location-icon,
+.account-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 14px;
+  height: 14px;
+  margin-right: 2px;
+  font-style: normal;
+}
+
+/* Điều chỉnh dropdown container */
+.food-menu-container,
+.blog-menu-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+/* Điều chỉnh dropdown menu */
+.food-dropdown-menu,
+.blog-dropdown-menu {
+  top: 100%;
+  margin-top: 12px;
+}
+
+/* Điều chỉnh user menu */
+.user-menu {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.account-btn {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 4px;
+}
+
+/* Giữ dropdown menu ở vị trí chính xác */
+.dropdown-menu {
+  top: 40px;
+}
+
+/* Điều chỉnh container chung */
+.container {
+  padding-left: 8px;
+  padding-right: 8px;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Đảm bảo không có padding thừa cho nav-item đầu tiên */
+.nav-list > li:first-child {
+  padding-left: 0;
+}
+
+/* Thêm font Poppins cho nav-link */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+/* Menu thả xuống của người dùng - Kiểu dáng hoàn toàn khác */
+.user-dropdown-menu {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  min-width: 200px;
+  z-index: 1000;
+  animation: slideDown 0.3s ease forwards;
+}
+
+/* Tạo mũi tên nhỏ phía trên menu */
+.user-dropdown-menu::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  right: 10px;
+  width: 10px;
+  height: 10px;
+  background: white;
+  transform: rotate(45deg);
+  z-index: -1;
+  box-shadow: -2px -2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Loại bỏ các bộ chọn hover cho menu thả xuống của người dùng */
+
+/* Kiểu dáng biểu tượng trong menu người dùng */
+.menu-icon {
+  margin-right: 10px;
+  font-size: 16px;
+  width: 20px;
+  display: inline-block;
+  text-align: center;
+  color: #666;
+}
+
+.user-dropdown-menu a:hover .menu-icon,
+.user-dropdown-menu button:hover .menu-icon {
+  color: #e71a0f;
+}
+
+/* Kiểu dáng menu thả xuống người dùng */
+.user-dropdown-menu a,
+.user-dropdown-menu button {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  color: #333333;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border: none;
+  background: transparent;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  border-left: 3px solid transparent;
+}
+
+.user-dropdown-menu a:hover,
+.user-dropdown-menu button:hover {
+  background-color: #f4f6f8;
+  color: #e71a0f;
+  border-left: 3px solid #e71a0f;
+}
+
+/* Hiệu ứng trượt xuống */
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Biểu tượng logo */
+.logo-icon {
+  font-size: 1.2rem;
+  margin-right: 6px;
+  color: #b490ff;
+  text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.3);
+  animation: pulse-icon 2s infinite;
+}
+
+/* Hiệu ứng nhịp đập cho biểu tượng */
+@keyframes pulse-icon {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
